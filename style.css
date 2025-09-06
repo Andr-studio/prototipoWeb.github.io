@@ -1,0 +1,1188 @@
+:root {
+            /* --- Light Mode Palette (iOS Inspired) --- */
+            --ios-blue: #007AFF;
+            --ios-light-gray-track: #E5E5EA; /* Progress bar track, some borders */
+            --ios-light-gray-bg-button: #f2f2f7; /* Secondary button background */
+            --ios-light-gray-bg-card: #FFFFFF; /* Card backgrounds */
+            --ios-light-gray-bg-page: #f2f2f2; /* Overall page background - similar to iOS settings */
+            --ios-light-border-color: #D1D1D6; /* Borders, dividers */
+            --ios-light-text-primary: #000000;
+            --ios-light-text-secondary: #3C3C4399; /* Opacity 60% for secondary text */
+            --ios-light-text-tertiary: #3C3C434D; /* Opacity 30% for placeholder/disabled */
+            --ios-text-on-blue: #FFFFFF;
+            --ios-link-color: #007AFF;
+            --ios-input-focus-ring: rgba(0, 122, 255, 0.3);
+            --ios-input-bg: #FFFFFF;
+            --ios-input-border: #C6C6C8;
+            --ios-error-bg: #fee2e2;
+            --ios-error-text: #b91c1c;
+            --ios-success-bg: #dcfce7;
+            --ios-success-text: #166534;
+            --ios-timeline-icon-completed-bg: #34C759;
+            --ios-timeline-icon-pending-bg: #E5E5EA;
+            --ios-timeline-icon-pending-border: #D1D1D6;
+            --ios-timeline-content-bg: #f9fafb; /* Slightly off-white */
+            --ios-timeline-content-border: #e5e7eb;
+            --ios-feedback-cliente-bg: #e0e7ff;
+            --ios-feedback-cliente-border: #6366f1;
+            --ios-feedback-equipo-bg: #d1fae5;
+            --ios-feedback-equipo-border: #059669;
+            --ios-tooltip-bg: #2c2c2e;
+            --ios-tooltip-text: #FFFFFF;
+            --ios-tooltip-border: #3A3A3C;
+
+            /* Default to light mode variables */
+            --bg-page: var(--ios-light-gray-bg-page);
+            --bg-card: var(--ios-light-gray-bg-card);
+            --bg-sidebar: #f8fafc;
+            --bg-input: var(--ios-input-bg);
+            --bg-button-secondary: var(--ios-light-gray-bg-button);
+            --bg-tooltip: var(--ios-tooltip-bg);
+            --bg-progress-track: var(--ios-light-gray-track);
+            --bg-timeline-content: var(--ios-timeline-content-bg);
+            --bg-feedback-cliente: var(--ios-feedback-cliente-bg);
+            --bg-feedback-equipo: var(--ios-feedback-equipo-bg);
+            --bg-error: var(--ios-error-bg);
+            --bg-success: var(--ios-success-bg);
+            
+            --text-primary: var(--ios-light-text-primary);
+            --text-secondary: var(--ios-light-text-secondary);
+            --text-tertiary: var(--ios-light-text-tertiary);
+            --text-link: var(--ios-link-color);
+            --text-button-secondary: var(--ios-link-color);
+            --text-tooltip: var(--ios-tooltip-text);
+            --text-error: var(--ios-error-text);
+            --text-success: var(--ios-success-text);
+            --text-sidebar-username: #1e293b;
+            --text-sidebar-section-title: #64748b;
+            --text-project-list-item: #475569;
+            --text-project-list-item-hover: #1e293b;
+
+            --border-color: var(--ios-light-border-color);
+            --border-input: var(--ios-input-border);
+            --border-sidebar: #e2e8f0;
+            --border-timeline-content: var(--ios-timeline-content-border);
+            --border-feedback-cliente: var(--ios-feedback-cliente-border);
+            --border-feedback-equipo: var(--ios-feedback-equipo-border);
+            --border-tooltip: var(--ios-tooltip-border);
+
+            --progress-fill: var(--ios-blue);
+            --timeline-icon-completed-bg: var(--ios-timeline-icon-completed-bg);
+            --timeline-icon-in-progress-bg: var(--ios-blue);
+            --timeline-icon-pending-bg: var(--ios-timeline-icon-pending-bg);
+            --timeline-icon-pending-border: var(--ios-timeline-icon-pending-border);
+            --timeline-icon-pending-stroke: #4b5563;
+
+            --input-focus-ring: var(--ios-input-focus-ring);
+            --shadow-color-base: 0, 0, 0;
+            --theme-toggle-icon-fill: #3C3C4399;
+            --checkbox-ring-color: var(--ios-blue);
+            --checkbox-checked-bg-color: var(--ios-blue);
+            --checkbox-checked-border-color: var(--ios-blue);
+            --button-export-bg: var(--ios-light-gray-bg-button);
+            --button-export-text: var(--ios-link-color);
+            --button-export-border: var(--ios-light-border-color);
+            --realtime-indicator-icon-fill: var(--ios-light-text-secondary);
+            --attachment-link-color: var(--ios-link-color);
+            --attachment-icon-color: var(--ios-light-text-secondary);
+            --ai-button-bg: #eef2ff; /* Light indigo for AI buttons */
+            --ai-button-text: #4f46e5; /* Indigo text */
+            --ai-button-border: #c7d2fe;
+            --ai-summary-bg: #f0f9ff; /* Light sky */
+            --ai-summary-border: #bae6fd;
+            --ai-summary-text: #075985; /* Darker sky */
+
+            --chatbot-bg: var(--ios-light-gray-bg-card);
+            --chatbot-header-bg: var(--ios-light-gray-bg-page);
+            --chatbot-input-bg: var(--ios-input-bg);
+            --chatbot-user-bubble-bg: var(--ios-blue);
+            --chatbot-user-bubble-text: var(--ios-text-on-blue);
+            --chatbot-ai-bubble-bg: var(--ios-light-gray-bg-button);
+            --chatbot-ai-bubble-text: var(--ios-light-text-primary);
+            --chatbot-send-button-bg: var(--ios-blue);
+            --chatbot-send-button-text: var(--ios-text-on-blue);
+
+            /* Shepherd Tour Variables */
+            --shepherd-text-color: var(--text-primary);
+            --shepherd-bg-color: var(--bg-card);
+            --shepherd-header-bg-color: var(--bg-input);
+            --shepherd-footer-bg-color: var(--bg-input);
+            --shepherd-button-bg-color: var(--progress-fill);
+            --shepherd-button-text-color: var(--ios-text-on-blue);
+            --shepherd-secondary-button-bg-color: var(--bg-button-secondary);
+            --shepherd-secondary-button-text-color: var(--text-button-secondary);
+            --shepherd-cancel-icon-color: var(--text-secondary);
+            --shepherd-arrow-color: var(--bg-input);
+        }
+
+        body.dark-mode {
+            /* --- Dark Mode Palette (iOS Inspired) --- */
+            --ios-dark-blue: #0A84FF;
+            --ios-dark-gray-1: #1C1C1E;
+            --ios-dark-gray-2: #2C2C2E;
+            --ios-dark-gray-3: #3A3A3C;
+            --ios-dark-gray-4: #48484A;
+            --ios-dark-gray-5: #636366;
+            --ios-dark-gray-6: #8E8E93;
+
+            --ios-dark-text-primary: #FFFFFF;
+            --ios-dark-text-secondary: #EBEBF599;
+            --ios-dark-text-tertiary: #EBEBF54D;
+            --ios-dark-text-on-blue: #FFFFFF;
+            --ios-dark-link-color: var(--ios-dark-blue);
+            --ios-dark-input-focus-ring: rgba(10, 132, 255, 0.5);
+
+            --ios-dark-error-bg: #5c2121;
+            --ios-dark-error-text: #ff8a8a;
+            --ios-dark-success-bg: #14532d;
+            --ios-dark-success-text: #a7f3d0;
+
+            --ios-dark-timeline-icon-completed-bg: #30D158;
+            --ios-dark-timeline-icon-pending-bg: var(--ios-dark-gray-3);
+            --ios-dark-timeline-icon-pending-border: var(--ios-dark-gray-5);
+            --ios-dark-feedback-cliente-bg: #334D8F;
+            --ios-dark-feedback-cliente-border: #588DFF;
+            --ios-dark-feedback-equipo-bg: #246049;
+            --ios-dark-feedback-equipo-border: #30A167;
+            --ios-dark-tooltip-bg: #EBEBF5E6; /* Lighter tooltip for dark mode */
+            --ios-dark-tooltip-text: #000000;
+            --ios-dark-tooltip-border: #FFFFFF00;
+
+
+            /* Assigning to generic variables for dark mode */
+            --bg-page: var(--ios-dark-gray-1);
+            --bg-card: var(--ios-dark-gray-2);
+            --bg-sidebar: var(--ios-dark-gray-2);
+            --bg-input: var(--ios-dark-gray-3);
+            --bg-button-secondary: var(--ios-dark-gray-3);
+            --bg-tooltip: var(--ios-dark-tooltip-bg);
+            --bg-progress-track: var(--ios-dark-gray-3);
+            --bg-timeline-content: var(--ios-dark-gray-2);
+            --bg-feedback-cliente: var(--ios-dark-feedback-cliente-bg);
+            --bg-feedback-equipo: var(--ios-dark-feedback-equipo-bg);
+            --bg-error: var(--ios-dark-error-bg);
+            --bg-success: var(--ios-dark-success-bg);
+
+            --text-primary: var(--ios-dark-text-primary);
+            --text-secondary: var(--ios-dark-text-secondary);
+            --text-tertiary: var(--ios-dark-text-tertiary);
+            --text-link: var(--ios-dark-link-color);
+            --text-button-secondary: var(--ios-dark-link-color);
+            --text-tooltip: var(--ios-dark-tooltip-text);
+            --text-error: var(--ios-dark-error-text);
+            --text-success: var(--ios-dark-success-text);
+            --text-sidebar-username: var(--ios-dark-text-primary);
+            --text-sidebar-section-title: var(--ios-dark-text-secondary);
+            --text-project-list-item: var(--ios-dark-text-secondary);
+            --text-project-list-item-hover: var(--ios-dark-text-primary);
+
+            --border-color: var(--ios-dark-gray-4);
+            --border-input: var(--ios-dark-gray-5);
+            --border-sidebar: var(--ios-dark-gray-4);
+            --border-timeline-content: var(--ios-dark-gray-4);
+            --border-feedback-cliente: var(--ios-dark-feedback-cliente-border);
+            --border-feedback-equipo: var(--ios-dark-feedback-equipo-border);
+            --border-tooltip: var(--ios-dark-tooltip-border);
+
+            --progress-fill: var(--ios-dark-blue);
+            --timeline-icon-completed-bg: var(--ios-dark-timeline-icon-completed-bg);
+            --timeline-icon-in-progress-bg: var(--ios-dark-blue);
+            --timeline-icon-pending-bg: var(--ios-dark-timeline-icon-pending-bg);
+            --timeline-icon-pending-border: var(--ios-dark-timeline-icon-pending-border);
+            --timeline-icon-pending-stroke: var(--ios-dark-text-secondary);
+
+            --input-focus-ring: var(--ios-dark-input-focus-ring);
+            --shadow-color-base: 255, 255, 255;
+            --theme-toggle-icon-fill: #EBEBF599;
+            --checkbox-ring-color: var(--ios-dark-blue);
+            --checkbox-checked-bg-color: var(--ios-dark-blue);
+            --checkbox-checked-border-color: var(--ios-dark-blue);
+            --button-export-bg: var(--ios-dark-gray-3);
+            --button-export-text: var(--ios-dark-link-color);
+            --button-export-border: var(--ios-dark-gray-5);
+            --realtime-indicator-icon-fill: var(--ios-dark-text-secondary);
+            --attachment-link-color: var(--ios-dark-link-color);
+            --attachment-icon-color: var(--ios-dark-text-secondary);
+            --ai-button-bg: #312e81; /* Darker indigo for AI buttons in dark mode */
+            --ai-button-text: #c7d2fe; /* Lighter indigo text */
+            --ai-button-border: #4338ca;
+            --ai-summary-bg: #0c4a6e; /* Darker sky */
+            --ai-summary-border: #0ea5e9;
+            --ai-summary-text: #e0f2fe; /* Lighter sky */
+
+            --chatbot-bg: var(--ios-dark-gray-2);
+            --chatbot-header-bg: var(--ios-dark-gray-1);
+            --chatbot-input-bg: var(--ios-dark-gray-3);
+            --chatbot-user-bubble-bg: var(--ios-dark-blue);
+            --chatbot-user-bubble-text: var(--ios-dark-text-on-blue);
+            --chatbot-ai-bubble-bg: var(--ios-dark-gray-3);
+            --chatbot-ai-bubble-text: var(--ios-dark-text-primary);
+            --chatbot-send-button-bg: var(--ios-dark-blue);
+            --chatbot-send-button-text: var(--ios-dark-text-on-blue);
+
+            /* Shepherd Tour Dark Mode Variables */
+            --shepherd-text-color: var(--ios-dark-text-primary);
+            --shepherd-bg-color: var(--ios-dark-gray-2);
+            --shepherd-header-bg-color: var(--ios-dark-gray-3);
+            --shepherd-footer-bg-color: var(--ios-dark-gray-3);
+            --shepherd-button-bg-color: var(--ios-dark-blue);
+            --shepherd-button-text-color: var(--ios-dark-text-on-blue);
+            --shepherd-secondary-button-bg-color: var(--ios-dark-gray-4);
+            --shepherd-secondary-button-text-color: var(--ios-dark-link-color);
+            --shepherd-cancel-icon-color: var(--ios-dark-text-secondary);
+            --shepherd-arrow-color: var(--ios-dark-gray-3);
+        }
+
+        body {
+            background-color: var(--bg-page) !important;
+            color: var(--text-primary) !important;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* --- GENERAL ELEMENT STYLING USING VARS --- */
+ 
+
+        #sidebar {
+            background-color: var(--bg-sidebar) !important;
+            color: var(--text-secondary) !important;
+            border-right-width: 1px;
+            border-right-color: var(--border-sidebar) !important;
+        }
+        #sidebar-username-display {
+            color: var(--text-sidebar-username) !important;
+        }
+        #sidebar .sidebar-section-title {
+            color: var(--text-sidebar-section-title) !important;
+        }
+        #sidebar .sidebar-divider {
+            border-color: var(--border-sidebar) !important;
+        }
+
+        #project-list li {
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-project-list-item) !important;
+        }
+        #project-list li:hover {
+            background-color: var(--bg-input) !important;
+            color: var(--text-project-list-item-hover) !important;
+        }
+        #project-list li.selected {
+            background-color: var(--progress-fill) !important;
+            color: var(--ios-text-on-blue) !important;
+        }
+        #project-list li .project-icon {
+            color: var(--text-secondary) !important;
+        }
+        #project-list li:hover .project-icon {
+            color: var(--text-primary) !important;
+        }
+        #project-list li.selected .project-icon,
+        #project-list li.selected .checkmark-icon {
+            color: var(--ios-text-on-blue) !important;
+        }
+        #project-list li .checkmark-icon {
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            color: var(--ios-text-on-blue) !important;
+        }
+        #project-list li.selected .checkmark-icon {
+            opacity: 1;
+        }
+        
+        /* User Tooltip in Sidebar */
+        #user-tooltip {
+            background-color: var(--bg-tooltip) !important;
+            color: var(--text-tooltip) !important;
+            border: 1px solid var(--border-tooltip) !important;
+        }
+        #user-tooltip #tooltip-user-email,
+        #user-tooltip #tooltip-account-type {
+            color: var(--text-tooltip) !important;
+            opacity: 0.8;
+        }
+        #user-tooltip #tooltip-account-type {
+             border-top-color: var(--text-tooltip) !important;
+             opacity: 0.3;
+        }
+
+
+        /* Botones Primarios estilo iOS */
+        .btn-primary-ios {
+            background-color: var(--progress-fill) !important;
+            color: var(--ios-text-on-blue) !important;
+            font-weight: 500 !important;
+            transition: background-color 0.2s ease-in-out;
+            border: none;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+        .btn-primary-ios:hover {
+            filter: brightness(115%);
+        }
+        body:not(.dark-mode) .btn-primary-ios:hover { /* Specific hover for light mode */
+            background-color: #0062CC !important;
+        }
+        body.dark-mode .btn-primary-ios:hover { /* Specific hover for dark mode */
+            background-color: #0B78E3 !important;
+        }
+        .btn-primary-ios:focus {
+            outline: 2px solid var(--progress-fill) !important;
+            outline-offset: 2px !important;
+        }
+
+        /* Botón de Logout estilo iOS */
+        #logout-button-sidebar {
+            background-color: var(--bg-button-secondary) !important;
+            color: var(--text-button-secondary) !important;
+            font-weight: 500 !important;
+        }
+        #logout-button-sidebar:hover {
+            filter: brightness(90%);
+        }
+        body:not(.dark-mode) #logout-button-sidebar:hover {
+            background-color: #D1D1D6 !important;
+            color: #0062CC !important;
+        }
+        body.dark-mode #logout-button-sidebar:hover {
+            background-color: var(--ios-dark-gray-4) !important;
+            color: var(--ios-dark-blue) !important;
+        }
+        #logout-button-sidebar svg {
+            color: var(--text-button-secondary) !important;
+        }
+        body:not(.dark-mode) #logout-button-sidebar:hover svg { color: #0062CC !important;}
+        body.dark-mode #logout-button-sidebar:hover svg { color: var(--ios-dark-blue) !important;}
+        
+        /* Enlaces estilo iOS */
+        .link-ios {
+            color: var(--text-link) !important;
+            text-decoration: none !important;
+        }
+        .link-ios:hover {
+            text-decoration: underline !important;
+        }
+
+        /* Barra de progreso estilo iOS */
+        .progress-bar-track-ios {
+            background-color: var(--bg-progress-track) !important;
+        }
+        .progress-bar-fill-ios {
+            background-color: var(--progress-fill) !important;
+        }
+
+        /* --- Estilos para el Formulario de Login --- */
+        #login-section > div.max-w-md {
+            background-color: var(--bg-card) !important;
+            box-shadow: 0 4px 12px rgba(var(--shadow-color-base), 0.1);
+        }
+        body.dark-mode #login-section > div.max-w-md {
+            box-shadow: 0 4px 12px rgba(var(--shadow-color-base), 0.05);
+        }
+
+        .login-form h2 { font-size: 1.75rem; font-weight: 600; color: var(--text-primary); text-align: center; margin-bottom: 1.5rem; }
+        .input-group { margin-bottom: 1rem; }
+        .input-group label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+        .input-group input {
+            width: 100%; padding: 0.875rem 1.25rem;
+            border: 1px solid var(--border-input);
+            background-color: var(--bg-input) !important;
+            color: var(--text-primary) !important;
+            border-radius: 0.375rem;
+            box-shadow: 0 1px 2px rgba(var(--shadow-color-base), 0.03);
+            transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+        }
+        .input-group input::placeholder {
+            color: var(--text-tertiary);
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--progress-fill) !important;
+            box-shadow: 0 0 0 3px var(--input-focus-ring) !important;
+        }
+
+        /* Specific styles for #login-button */
+        #login-button {
+            width: 100% !important;
+            padding: 0.875rem 1.25rem !important; /* Consistent padding */
+            box-sizing: border-box !important;
+            /* Inherits colors from .btn-primary-ios */
+            /* margin-bottom is handled by Tailwind class "mb-4" in HTML */
+        }
+
+        /* Specific styles for #google-login-button */
+        #google-login-button {
+            /* Theme-dependent styles first */
+            background-color: var(--bg-input) !important;
+            color: var(--text-primary) !important;
+            border: 1px solid var(--border-input) !important;
+
+            /* Layout and appearance styles */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.75rem !important;
+            width: 100% !important;
+            padding: 0.875rem 1.25rem !important; /* Consistent padding */
+            border-radius: 0.375rem !important;   /* Consistent border-radius */
+            font-weight: 500 !important;
+            box-sizing: border-box !important;
+            margin-bottom: 1rem !important; /* Spacing before the "O" divider */
+            transition: background-color 0.2s, color 0.2s ease-in-out;
+        }
+
+        body:not(.dark-mode) #google-login-button { background-color: #FFFFFF !important; color: #374151 !important; border: 1px solid #d1d5db !important; }
+        body:not(.dark-mode) #google-login-button:hover { background-color: #f9fafb !important; }
+        
+        body.dark-mode #google-login-button {
+            background-color: var(--ios-dark-gray-3) !important;
+            color: var(--ios-dark-text-primary) !important;
+            border: 1px solid var(--ios-dark-gray-5) !important;
+        }
+        body.dark-mode #google-login-button:hover {
+            background-color: var(--ios-dark-gray-4) !important;
+        }
+        body.dark-mode #google-login-button img { filter: invert(1) hue-rotate(180deg) saturate(0.5) brightness(1.5); }
+        
+        #google-login-button:focus {
+            outline: 2px solid var(--text-secondary) !important;
+            outline-offset: 2px !important;
+            border-color: var(--text-secondary) !important;
+        }
+        
+        .error-message {
+            background-color: var(--bg-error) !important;
+            color: var(--text-error) !important;
+            padding: 0.75rem; border-radius: 0.375rem; margin-bottom: 1rem; text-align: center;
+        }
+        .my-6 .border-t { border-color: var(--border-color) !important; }
+        .my-6 .text-gray-500 { color: var(--text-secondary) !important; }
+        .text-gray-600 { color: var(--text-secondary) !important; }
+        /* --- Fin Estilos para el Formulario de Login --- */
+
+        /* Dashboard Header */
+        #dashboard-content header {
+            background-color: var(--bg-card) !important;
+            border-bottom-color: var(--border-color) !important;
+            color: var(--text-primary) !important;
+        }
+        #dashboard-content header h1, #dashboard-content header p {
+             color: var(--text-primary) !important;
+        }
+         #dashboard-content header p { color: var(--text-secondary) !important; }
+
+        #selected-project-name {
+            color: var(--text-link) !important;
+        }
+        #selected-project-description {
+            color: var(--text-secondary) !important;
+        }
+
+        /* Cards in Dashboard Main */
+        #dashboard-content main section .bg-white {
+            background-color: var(--bg-card) !important;
+            border-color: var(--border-color) !important;
+            box-shadow: 0 2px 8px rgba(var(--shadow-color-base), 0.07);
+        }
+        body.dark-mode #dashboard-content main section .bg-white {
+            box-shadow: 0 2px 8px rgba(var(--shadow-color-base), 0.03);
+        }
+
+        /* Text within cards */
+        #dashboard-content main section .text-gray-800 { color: var(--text-primary) !important; }
+        #dashboard-content main section .text-gray-700 { color: var(--text-primary) !important; opacity: 0.9; }
+        #dashboard-content main section .text-gray-600 { color: var(--text-secondary) !important; }
+        #dashboard-content main section .text-gray-500 { color: var(--text-tertiary) !important; }
+
+        /* Select dropdowns in General Progress card */
+        #general-progress-card select {
+            background-color: var(--bg-input) !important;
+            color: var(--text-primary) !important;
+            border-color: var(--border-input) !important;
+        }
+        #general-progress-card select option { /* Styling options is limited and browser-dependent */
+            background-color: var(--bg-input) !important;
+            color: var(--text-primary) !important;
+        }
+
+
+        /* Timeline */
+        .timeline-item { position: relative; padding-left: 40px; margin-bottom: 1.5rem; }
+        .calendario-item-container { position: relative; } /* Ensure .calendario-item-container is a positioned ancestor for its expand icon */
+        .calendario-item-container.expanded .timeline-details-container { display: block !important; }
+        .calendario-item-container .expand-icon svg { transition: transform 0.2s; }
+        .calendario-item-container.expanded .expand-icon svg { transform: rotate(180deg); }
+
+
+        .timeline-icon { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .timeline-icon.completed { background-color: var(--timeline-icon-completed-bg) !important; }
+        .timeline-icon.in-progress { background-color: var(--timeline-icon-in-progress-bg) !important; }
+        .timeline-icon.pending {
+            background-color: var(--timeline-icon-pending-bg) !important;
+            border: 1px solid var(--timeline-icon-pending-border) !important;
+        }
+        .timeline-icon.pending svg {
+            stroke: var(--timeline-icon-pending-stroke) !important;
+        }
+        .timeline-content {
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-timeline-content) !important;
+            border-radius: 0.375rem;
+            border: 1px solid var(--border-timeline-content) !important;
+            color: var(--text-primary);
+        }
+        .timeline-title { font-weight: 600; margin-bottom: 0.25rem; color: var(--text-primary); }
+        .timeline-summary { font-size: 0.875rem; color: var(--text-secondary); }
+        
+        .timeline-item .expand-icon, .calendario-item-container .expand-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 20px; /* Explicit size */
+            height: 20px; /* Explicit size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+            z-index: 10;
+        }
+        .timeline-item .expand-icon svg, .calendario-item-container .expand-icon svg {
+            width: 100%;
+            height: 100%;
+            /* fill: currentColor; is inherited */
+        }
+          /* Estilos para el contenedor del item del calendario en MODO CLARO */
+        .calendario-item-container.bg-indigo-50 {
+            background-color: var(--bg-timeline-content) !important; /* Usa la variable de fondo del contenido del timeline */
+            border-color: var(--border-timeline-content) !important;   /* Usa la variable de borde del contenido del timeline */
+        }
+
+        /* Estilos para el contenedor del item del calendario en MODO OSCURO */
+        body.dark-mode .calendario-item-container.bg-indigo-50 {
+            background-color: var(--bg-timeline-content) !important; /* La variable se resolverá al color oscuro definido en tu tema */
+            border-color: var(--border-timeline-content) !important;   /* La variable se resolverá al color oscuro definido en tu tema */
+        }
+
+        .timeline-details-container {
+            display: none; margin-top: 0.75rem; padding-top: 0.75rem;
+            border-top: 1px dashed var(--border-color) !important;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        .timeline-item.expanded .timeline-details-container { display: block; }
+        .timeline-item.expanded .expand-icon svg { transform: rotate(180deg); }
+
+        .feedback-form button {
+            background-color: var(--progress-fill) !important;
+            color: var(--ios-text-on-blue) !important;
+            padding: 0.5rem 0.75rem; /* Increased vertical padding */
+        }
+        .feedback-form button:hover {
+            filter: brightness(115%);
+        }
+        body:not(.dark-mode) .feedback-form button:hover { background-color: #0062CC !important; }
+        body.dark-mode .feedback-form button:hover { background-color: #0B78E3 !important; }
+
+
+        .task-feedback-section { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-timeline-content) !important;}
+        .task-feedback-section h5 { font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-primary) !important;}
+        .feedback-list { list-style: none; padding-left: 0; max-height: 250px; overflow-y: auto; margin-bottom: 0.75rem; } /* Increased max-height */
+        .feedback-item { padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--text-primary) !important; }
+        .feedback-item.feedback-cliente {
+            background-color: var(--bg-feedback-cliente) !important;
+            border-left: 3px solid var(--border-feedback-cliente) !important;
+        }
+        .feedback-item.feedback-equipo {
+            background-color: var(--bg-feedback-equipo) !important;
+            border-left: 3px solid var(--border-feedback-equipo) !important;
+        }
+        .feedback-meta { font-size: 0.7rem; color: var(--text-secondary) !important; margin-top: 0.25rem; }
+        .feedback-form textarea {
+            width: 100%;
+            border: 1px solid var(--border-input) !important;
+            background-color: var(--bg-input) !important;
+            color: var(--text-primary) !important;
+            border-radius: 0.25rem; padding: 0.5rem; font-size: 0.875rem; margin-bottom: 0.5rem;
+        }
+         .feedback-form textarea::placeholder {
+            color: var(--text-tertiary);
+        }
+        .feedback-reply-link {
+            font-size: 0.75rem;
+            color: var(--text-link);
+            cursor: pointer;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+        .feedback-reply-link:hover {
+            text-decoration: underline;
+        }
+        .feedback-reply-form {
+            margin-top: 0.5rem;
+            margin-left: 1.25rem; /* Indent reply form */
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--border-color);
+        }
+        .feedback-reply-form textarea {
+            font-size: 0.8rem; /* Smaller textarea for replies */
+        }
+        .feedback-reply-form button {
+            padding: 0.25rem 0.5rem; /* Smaller button for replies */
+            font-size: 0.75rem;
+        }
+        .feedback-replies-container {
+            margin-left: 1.25rem; /* Indent replies visually */
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--border-color);
+            margin-top: 0.5rem;
+        }
+        
+        .loader {
+            border: 4px solid var(--bg-input);
+            border-top: 4px solid var(--progress-fill);
+            border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .content-flash { animation: flash-animation 0.7s ease-out; }
+        @keyframes flash-animation { 0% { opacity: 0.3; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 1; transform: scale(1); } }
+        
+        /* Activity List Items */
+        #recent-activity-list li {
+            border-bottom-color: var(--border-color) !important;
+        }
+        #recent-activity-list li p strong { color: var(--text-primary); }
+        #recent-activity-list li p { color: var(--text-secondary); }
+        #recent-activity-list li .text-xs { color: var(--text-tertiary); }
+
+        /* Realtime Status Indicator */
+        #realtime-status-indicator {
+            display: inline-flex; /* Para alinear el SVG verticalmente si es necesario */
+            align-items: center;
+            padding: 0.25rem 0.5rem; /* Ajustar padding si es necesario */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.75rem; /* text-xs */
+            /* El color de fondo y texto se maneja por JS con variables CSS */
+        }
+        #realtime-status-indicator svg {
+            width: 0.875rem; /* w-3.5 */
+            height: 0.875rem; /* h-3.5 */
+            fill: var(--realtime-indicator-icon-fill);
+        }
+
+
+        /* Save preferences feedback */
+        #save-preferences-feedback.text-green-600 {
+            color: var(--text-success) !important;
+        }
+         #save-preferences-feedback.text-red-600 {
+            color: var(--text-error) !important;
+        }
+
+        /* Footer */
+        #dashboard-content footer {
+            background-color: var(--bg-card) !important;
+            border-top-color: var(--border-color) !important;
+            color: var(--text-tertiary) !important;
+        }
+
+        /* Table styles */
+        table thead.bg-gray-50 { background-color: var(--bg-input) !important; }
+        table th { color: var(--text-secondary) !important; }
+        table tbody.bg-white { background-color: var(--bg-card) !important; }
+        table { border-color: var(--border-color) !important; }
+        table td.text-gray-900 { color: var(--text-primary) !important; }
+        table td.text-gray-500 { color: var(--text-secondary) !important; }
+        table tr.hover\:bg-gray-50:hover {
+             background-color: var(--bg-input) !important;
+        }
+        body.dark-mode table tr.hover\:bg-gray-50:hover {
+            background-color: var(--ios-dark-gray-3) !important;
+        }
+
+        /* Theme Toggle Button */
+        #theme-toggle-button {
+            background-color: transparent;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease-in-out;
+        }
+        #theme-toggle-button:hover {
+            background-color: rgba(var(--shadow-color-base), 0.1); /* Subtle hover */
+        }
+        #theme-toggle-button svg {
+            width: 1.25rem; /* Equivalent to Tailwind's w-5 */
+            height: 1.25rem; /* Equivalent to Tailwind's h-5 */
+            fill: var(--theme-toggle-icon-fill);
+            transition: fill 0.3s ease;
+        }
+        .theme-icon-sun, .theme-icon-moon {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        body.dark-mode .theme-icon-sun {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.5);
+        }
+        body:not(.dark-mode) .theme-icon-moon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.5);
+        }
+        body.dark-mode .theme-icon-moon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+         body:not(.dark-mode) .theme-icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        /* Notification Preferences Checkboxes */
+        .notification-preference-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+        .notification-preference-item input[type="checkbox"] {
+            height: 1rem; /* h-4 */
+            width: 1rem; /* w-4 */
+            border-radius: 0.25rem; /* rounded */
+            border-color: var(--border-input);
+            color: var(--checkbox-checked-bg-color); /* For the checkmark color */
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .notification-preference-item input[type="checkbox"]:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-offset-shadow: 0 0 #0000; /* Tailwind reset */
+            --tw-ring-shadow: 0 0 #0000; /* Tailwind reset */
+            box-shadow: 0 0 0 2px var(--bg-page), 0 0 0 4px var(--checkbox-ring-color);
+        }
+         .notification-preference-item input[type="checkbox"]:checked {
+            background-color: var(--checkbox-checked-bg-color);
+            border-color: var(--checkbox-checked-border-color);
+        }
+        .notification-preference-item label {
+            margin-left: 0.5rem; /* ml-2 */
+            font-size: 0.875rem; /* text-sm */
+            color: var(--text-secondary);
+        }
+
+        /* Export Buttons */
+        .btn-export {
+            background-color: var(--button-export-bg) !important;
+            color: var(--button-export-text) !important;
+            border: 1px solid var(--button-export-border) !important;
+            padding: 0.375rem 0.75rem; /* py-1.5 px-3 */
+            font-size: 0.75rem; /* text-xs */
+            border-radius: 0.375rem; /* rounded-md */
+            font-weight: 500;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .btn-export:hover {
+            filter: brightness(90%);
+        }
+        body:not(.dark-mode) .btn-export:hover { background-color: #e5e7eb !important; }
+        body.dark-mode .btn-export:hover { background-color: var(--ios-dark-gray-4) !important; }
+
+        /* Attachments Section */
+        .task-attachments-section {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-timeline-content);
+        }
+        .task-attachments-section h5 {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .attachment-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.75rem;
+        }
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            padding: 0.25rem 0;
+            font-size: 0.8rem;
+        }
+        .attachment-item svg {
+            width: 0.875rem; /* w-3.5 */
+            height: 0.875rem; /* h-3.5 */
+            fill: var(--attachment-icon-color);
+            margin-right: 0.375rem; /* mr-1.5 */
+        }
+        .attachment-item a {
+            color: var(--attachment-link-color);
+            text-decoration: none;
+        }
+        .attachment-item a:hover {
+            text-decoration: underline;
+        }
+        .attachment-form {
+            display: flex;
+            gap: 0.5rem; /* gap-2 */
+            align-items: center;
+        }
+        .attachment-form input[type="file"] {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            /* Basic styling for file input, can be enhanced */
+            border: 1px solid var(--border-input);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            background-color: var(--bg-input);
+            flex-grow: 1;
+        }
+        .attachment-form button {
+            background-color: var(--ios-light-gray-bg-button);
+            color: var(--ios-link-color);
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: 1px solid var(--ios-light-border-color);
+        }
+        body.dark-mode .attachment-form button {
+            background-color: var(--ios-dark-gray-3);
+            color: var(--ios-dark-link-color);
+            border-color: var(--ios-dark-gray-5);
+        }
+        .attachment-form button:hover {
+            filter: brightness(95%);
+        }
+
+        /* AI Feature Styles */
+        .btn-ai-feature {
+            background-color: var(--ai-button-bg) !important;
+            color: var(--ai-button-text) !important;
+            border: 1px solid var(--ai-button-border) !important;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            margin-top: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        .btn-ai-feature:hover {
+            filter: brightness(95%);
+        }
+        .ai-summary-container, .ai-task-suggestions-container {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            background-color: var(--ai-summary-bg);
+            border: 1px solid var(--ai-summary-border);
+            color: var(--ai-summary-text);
+            font-size: 0.875rem;
+            white-space: pre-wrap; /* Preserve line breaks from AI */
+        }
+        .ai-summary-container p, .ai-task-suggestions-container p {
+            margin-bottom: 0.5rem;
+        }
+        .ai-summary-container strong, .ai-task-suggestions-container strong {
+            font-weight: 600;
+            color: var(--text-primary); /* Or var(--ai-summary-text) if it looks better */
+        }
+        body.dark-mode .ai-summary-container strong, body.dark-mode .ai-task-suggestions-container strong {
+             color: var(--ios-dark-text-primary);
+        }
+
+        /* Chatbot Styles */
+        #chatbot-fab {
+            position: fixed;
+            bottom: 1.5rem; /* 24px */
+            right: 1.5rem; /* 24px */
+            background-color: var(--progress-fill);
+            color: var(--ios-text-on-blue);
+            width: 3.5rem; /* 56px */
+            height: 3.5rem; /* 56px */
+            border-radius: 50%;
+            /* display: flex; /* REMOVED from here */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(var(--shadow-color-base), 0.15);
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        /* ADDED: Apply display:flex only when not hidden */
+        #chatbot-fab:not(.hidden) {
+            display: flex;
+        }
+
+        #chatbot-fab:hover {
+            transform: scale(1.1);
+        }
+        #chatbot-fab.chatbot-fab-hidden { /* Class to hide FAB when panel is open */
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.5);
+        }
+        #chatbot-fab svg {
+            width: 1.75rem; /* 28px */
+            height: 1.75rem; /* 28px */
+        }
+
+        #chatbot-panel {
+            position: fixed;
+            bottom: 0;
+            right: -400px; /* Start off-screen */
+            width: 380px;
+            height: calc(100% - 80px); /* Adjust height as needed, leave space for FAB */
+            max-height: 600px;
+            background-color: var(--chatbot-bg);
+            border-top-left-radius: 1rem; /* 16px */
+            border-top-right-radius: 0; /* Or 1rem if not against edge */
+            box-shadow: -5px 0px 15px rgba(var(--shadow-color-base), 0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
+            transition: right 0.3s ease-in-out;
+            border-left: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+        }
+        #chatbot-panel.open {
+            right: 0;
+        }
+        
+        #chatbot-header {
+            padding: 0.75rem 1rem; /* 12px 16px */
+            background-color: var(--chatbot-header-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chatbot-header h3 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: var(--text-primary);
+        }
+        #close-chatbot-button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+         #close-chatbot-button:hover {
+            color: var(--text-primary);
+        }
+        #close-chatbot-button svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        #chatbot-messages {
+            flex-grow: 1;
+            padding: 1rem; /* 16px */
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem; /* 12px */
+        }
+        .chat-bubble {
+            padding: 0.625rem 1rem; /* 10px 16px */
+            border-radius: 1.125rem; /* 18px, iOS like */
+            max-width: 80%;
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        .user-bubble {
+            background-color: var(--chatbot-user-bubble-bg);
+            color: var(--chatbot-user-bubble-text);
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem; /* Slight point */
+        }
+        .ai-bubble {
+            background-color: var(--chatbot-ai-bubble-bg);
+            color: var(--chatbot-ai-bubble-text);
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem; /* Slight point */
+        }
+         .ai-bubble.loading {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .ai-bubble.loading .dot-loader {
+            display: flex;
+        }
+        .ai-bubble.loading .dot-loader div {
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-tertiary);
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: dot-loader-anim 1.4s infinite ease-in-out both;
+        }
+        .ai-bubble.loading .dot-loader div:nth-child(1) { animation-delay: -0.32s; }
+        .ai-bubble.loading .dot-loader div:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes dot-loader-anim {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+
+        #chatbot-input-area {
+            padding: 0.75rem 1rem; /* 12px 16px */
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 0.5rem; /* 8px */
+        }
+        #chatbot-input {
+            flex-grow: 1;
+            padding: 0.625rem 1rem; /* 10px 16px */
+            border: 1px solid var(--border-input);
+            border-radius: 1.25rem; /* 20px, iOS like */
+            background-color: var(--chatbot-input-bg);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+        #chatbot-input:focus {
+            outline: none;
+            border-color: var(--progress-fill);
+            box-shadow: 0 0 0 2px var(--input-focus-ring);
+        }
+        #chatbot-send-button {
+            background-color: var(--chatbot-send-button-bg);
+            color: var(--chatbot-send-button-text);
+            border: none;
+            border-radius: 50%;
+            width: 2.25rem; /* 36px */
+            height: 2.25rem; /* 36px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        #chatbot-send-button svg {
+            width: 1rem; /* 16px */
+            height: 1rem; /* 16px */
+        }
+
+        /* Tour Trigger Icon */
+        .tour-trigger-icon {
+            font-size: 0.7rem; /* text-xs */
+            font-weight: 600; /* font-semibold */
+            color: var(--text-link);
+            margin-left: 8px;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-input);
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .tour-trigger-icon:hover {
+            filter: brightness(90%);
+        }
+        body:not(.dark-mode) .tour-trigger-icon:hover { background-color: #e5e7eb; }
+        body.dark-mode .tour-trigger-icon:hover { background-color: var(--ios-dark-gray-4); }
+
+
+        /* Shepherd.js theme adjustments */
+        .shepherd-element {
+            background-color: var(--shepherd-bg-color); /* Use background-color for consistency */
+            border-radius: 0.5rem; /* 8px */
+            box-shadow: 0 5px 15px rgba(var(--shadow-color-base), 0.15);
+            max-width: 380px;
+            filter: none !important; /* Override any potential inherited filters */
+        }
+        
+        .shepherd-header {
+            background-color: var(--shepherd-header-bg-color); /* Use background-color */
+            padding: 0.75rem 1rem; /* 12px 16px */
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        .shepherd-title {
+            color: var(--shepherd-text-color);
+            font-weight: 600;
+            font-size: 1.125rem; /* text-lg */
+        }
+        .shepherd-cancel-icon {
+            color: var(--shepherd-cancel-icon-color);
+        }
+        .shepherd-cancel-icon:hover {
+            color: var(--text-primary);
+        }
+        
+        .shepherd-text {
+            color: var(--shepherd-text-color);
+            padding: 1rem; /* 16px */
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.5;
+        }
+        
+        .shepherd-footer {
+            background-color: var(--shepherd-footer-bg-color); /* Use background-color */
+            padding: 0.75rem 1rem; /* 12px 16px */
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            display: flex;
+            justify-content: flex-end; /* Align buttons to the right */
+            gap: 0.5rem; /* 8px */
+        }
+        
+        .shepherd-button {
+            background-color: var(--shepherd-button-bg-color); /* Use background-color */
+            color: var(--shepherd-button-text-color) !important; /* Important to override default shepherd styles */
+            border: none;
+            padding: 0.5rem 1rem; /* 8px 16px */
+            border-radius: 0.375rem; /* 6px */
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+        .shepherd-button:hover {
+            filter: brightness(110%);
+        }
+        
+        .shepherd-button.shepherd-button-secondary {
+            background-color: var(--shepherd-secondary-button-bg-color); /* Use background-color */
+            color: var(--shepherd-secondary-button-text-color) !important;
+        }
+        .shepherd-button.shepherd-button-secondary:hover {
+            filter: brightness(90%);
+        }
+        body.dark-mode .shepherd-button.shepherd-button-secondary:hover {
+            filter: brightness(120%); /* Make secondary button lighter on hover in dark mode */
+        }
+
+        .shepherd-arrow::before {
+            background-color: var(--shepherd-arrow-color); /* Use background-color */
+        }
+        /* Ensure modal overlay is somewhat transparent */
+        .shepherd-modal-overlay {
+            background-color: rgba(var(--shadow-color-base), 0.3);
+        }
+
+        /* Specific override for Shepherd header in dark mode */
+        body.dark-mode .shepherd-element .shepherd-header {
+            background-color: var(--shepherd-header-bg-color) !important;
+        }
+        body.dark-mode .shepherd-element .shepherd-arrow::before {
+             background-color: var(--shepherd-arrow-color) !important;
+        }

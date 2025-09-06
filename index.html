@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLATAFORMA DE REGISTRO Y SEGUIMIENTO DE PROYECTOS DE DESARROLLO DE SOFTWARE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container" class="flex h-screen overflow-hidden">
+
+        <aside id="sidebar" class="w-72 p-5 space-y-4 transition-all duration-300 ease-in-out hidden flex-shrink-0 flex-col">
+            <div class="flex items-center justify-between pt-1 pb-3 mb-2 sidebar-divider border-b">
+                <div class="flex items-center group cursor-pointer relative">
+                    <div id="user-avatar" class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-semibold text-lg flex-shrink-0"></div>
+                    <span id="sidebar-username-display" class="ml-3 text-lg font-semibold truncate hidden sm:inline"></span>
+                    <div id="user-tooltip" class="absolute left-0 top-full mt-2 w-72 p-4 text-sm rounded-md shadow-xl z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="flex items-center mb-3">
+                            <div id="tooltip-avatar" class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-semibold text-base mr-3 flex-shrink-0"></div>
+                            <div>
+                                <p id="tooltip-user-name" class="font-semibold text-base"></p>
+                                <p id="tooltip-user-email" class="text-xs"></p>
+                            </div>
+                        </div>
+                        <p id="tooltip-account-type" class="text-xs border-t pt-2 mt-2"></p>
+                    </div>
+                </div>
+                <button id="theme-toggle-button" aria-label="Toggle theme">
+                    <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 15.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3.929 4.636a1 1 0 011.414-1.414l.707.707a1 1 0 01-1.414 1.414l-.707-.707zM13.95 14.657a1 1 0 011.414-1.414l.707.707a1 1 0 01-1.414 1.414l-.707-.707zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zM4.636 16.071a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707zM14.657 5.343a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707z"></path>
+                    </svg>
+                    <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex-grow">
+                <h2 id="proyectos-sidebar-title" class="text-xs uppercase font-semibold mb-2 tracking-wider sidebar-section-title">Proyectos</h2>
+                <ul id="project-list" class="space-y-1"></ul>
+            </nav>
+            <div class="mt-auto pt-4 sidebar-divider border-t">
+                <button id="logout-button-sidebar" class="w-full flex items-center justify-center py-2.5 px-4 rounded-md text-sm transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" /></svg>
+                    Cerrar Sesión
+                </button>
+            </div>
+        </aside>
+
+        <div id="content-area" class="flex-1 flex flex-col overflow-x-hidden">
+            <section id="login-section" class="flex-grow flex items-center justify-center p-6">
+                <div class="max-w-md w-full p-8 rounded-xl shadow-2xl">
+                    <div class="login-form">
+                        <h2>Iniciar Sesión</h2>
+                        <div id="error-message" class="error-message hidden"></div>
+                        <div class="input-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" value="demo@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" value="password">
+                        </div>
+                        <div class="text-right mb-4">
+                            <a href="#" class="link-ios text-sm hover:underline">¿Olvidaste contraseña?</a>
+                        </div>
+                        <button id="login-button" class="mb-4 btn-primary-ios">Iniciar Sesión</button>
+                        <button id="google-login-button">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="[Icono de Google]" onerror="this.onerror=null; this.src='https://placehold.co/24x24/E0E0E0/B0B0B0?text=G';" class="w-5 h-5">
+                            Iniciar sesión con Google
+                        </button>
+                        <div class="my-6 flex items-center">
+                            <div class="flex-grow border-t"></div>
+                            <span class="mx-4 text-sm">O</span>
+                            <div class="flex-grow border-t"></div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm">
+                                ¿No tienes una cuenta?
+                                <a href="#" id="register-link" class="link-ios font-medium hover:underline">Regístrate aquí</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="dashboard-content" class="hidden flex-1 flex flex-col">
+                <header class="p-6 border-b shadow-sm">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h1 class="text-2xl font-semibold">Tu Proyecto: <span id="selected-project-name">Ninguno seleccionado</span></h1>
+                            <p id="selected-project-description" class="mt-1">Vista general y actualizaciones de tu proyecto de software.</p>
+                        </div>
+                        </div>
+                </header>
+
+                <main class="flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <section class="lg:col-span-2 space-y-6">
+                        <div id="project-summary-card" class="p-6 rounded-xl shadow-lg border bg-white">
+                            <div id="project-summary-loader" class="loader hidden"></div>
+                            <div id="project-summary-text" class="mb-4 text-gray-700"></div>
+                            <div id="project-summary-details" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600 mb-4"></div>
+                            <button id="generate-ai-summary-button" class="btn-ai-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+                                    <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.31l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.31A1.73 1.73 0 0 0 2.31 4.213l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                                </svg>
+                                Generar Resumen con IA ✨
+                            </button>
+                            <div id="ai-summary-loader" class="loader hidden mt-2"></div>
+                            <div id="ai-project-summary-output" class="ai-summary-container hidden"></div>
+                        </div>
+                        <div id="general-progress-card" class="p-6 rounded-xl shadow-lg border bg-white">
+                            <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+                                <h2 class="text-xl font-semibold text-gray-800">Progreso General de Hitos</h2>
+                                <div class="flex flex-wrap items-center gap-x-4 gap-y-2"> <div class="flex items-center gap-2">
+                                        <label for="chart-type" class="text-sm font-medium text-gray-700">Vista:</label>
+                                        <select id="chart-type" name="chart-type" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                            <option value="lista">Lista Detallada</option>
+                                            <option value="barra">Barras de Progreso</option>
+                                            <option value="circular">Progreso Circular</option>
+                                            <option value="tabla">Tabla</option>
+                                            <option value="tarjeta">Tarjetas</option>
+                                            <option value="calendario">Tipo Calendario</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <label for="progress-format" class="text-sm font-medium text-gray-700">Formato:</label>
+                                        <select id="progress-format" name="progress-format" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                            <option value="porcentaje">Porcentaje</option>
+                                            <option value="hitos">Conteo de Hitos</option>
+                                        </select>
+                                    </div>
+                                    <button id="update-visualization-button" class="btn-primary-ios font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm min-w-[120px]">Actualizar</button>
+                                    <div class="flex space-x-2">
+                                        <button id="export-pdf-button" class="btn-export">Exportar PDF</button>
+                                        <button id="export-csv-button" class="btn-export">Exportar CSV</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full rounded-full h-3.5 mb-2 progress-bar-track-ios">
+                                <div id="barra-progreso" class="progress-bar-fill-ios h-3.5 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+                            </div>
+                            <p id="texto-progreso" class="text-sm text-right text-gray-600">0% Completado</p>
+                            <div class="mt-6">
+                                <h3 class="text-lg font-medium text-gray-800 mb-3">Hitos Clave</h3>
+                                <div id="timeline-loader" class="loader hidden"></div>
+                                <ul class="timeline" id="project-timeline">
+                                    <p class="p-4 text-gray-500">Selecciona un proyecto para ver sus hitos.</p>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="space-y-6">
+                        <div id="recent-activity-card" class="p-6 rounded-xl shadow-lg border bg-white">
+                            <div class="flex justify-between items-center mb-3">
+                                <h3 class="text-lg font-semibold text-gray-800">Actividad Reciente</h3>
+                                <span id="realtime-status-indicator" class="text-xs px-2 py-1 rounded-full" title="Las actualizaciones en tiempo real son simuladas en esta demo.">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div id="recent-activity-loader" class="loader hidden"></div>
+                            <ul id="recent-activity-list" class="space-y-4 text-sm"></ul>
+                        </div>
+                        <div id="notification-preferences-card" class="p-6 rounded-xl shadow-lg border bg-white">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Notificaciones y Preferencias</h3>
+                          <p class="text-gray-700 text-sm mb-4">Configura cómo quieres recibir las actualizaciones de tu proyecto.</p>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <label for="email-notifications" class="text-gray-700 text-sm">Recibir actualizaciones por Email</label>
+                                    <input type="checkbox" id="email-notifications" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 border-gray-300">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <label for="weekly-summary" class="text-gray-700 text-sm">Resumen semanal del progreso</label>
+                                    <input type="checkbox" id="weekly-summary" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 border-gray-300" checked>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <label for="milestone-completion" class="text-gray-700 text-sm">Notificar al completar hitos</label>
+                                    <input type="checkbox" id="milestone-completion" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 border-gray-300" checked>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <label for="major-updates" class="text-gray-700 text-sm">Notificar actualizaciones importantes</label>
+                                    <input type="checkbox" id="major-updates" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 border-gray-300" checked>
+                                </div>
+                            </div>
+                            
+                            <button id="save-preferences-button" class="btn-primary-ios mt-6 w-full py-2 px-4 rounded-lg text-sm min-w-[150px]">Guardar Preferencias</button>
+                            <p id="save-preferences-feedback" class="text-sm mt-2 text-center transition-opacity duration-300 opacity-0"></p>
+                        </div>
+                    </section>
+                </main>
+                <footer class="p-6 border-t text-center text-sm">
+                    <p>&copy; 2025 Plataforma de Visibilidad de Proyectos. Todos los derechos reservados.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <button id="chatbot-fab" title="Asistente de Proyectos IA" class="hidden"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0H9v2h2V9z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <div id="chatbot-panel">
+        <div id="chatbot-header">
+            <h3>Asistente IA ✨</h3>
+            <button id="close-chatbot-button" title="Cerrar Chat">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <div id="chatbot-messages">
+            </div>
+        <div id="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Pregunta sobre los proyectos...">
+            <button id="chatbot-send-button" title="Enviar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
